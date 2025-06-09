@@ -10,8 +10,8 @@ public class exam07 {
         System.out.println("연도를 입력하시오.");        
         Scanner in = new Scanner(System.in);      
         int year = in.nextInt();
-        1000 <= year <=3000;
-        int Bangkokyear = year + 543;
+        
+        int Bangkokyear = year - 543;
         System.out.println(Bangkokyear);
         
 
