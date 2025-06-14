@@ -27,8 +27,9 @@ public class exam19 {
         int A = Integer.parseInt(num[0]);
         int B = Integer.parseInt(num[1]);
         int C = Integer.parseInt(num[2]);
-        
-        if(A==B&&A==C&&B==C){
+        int MAX = Math.max(A, Math.max(B, C)); // math.max 함수 기억하기!!!
+
+        if(A==B&&A==C){
             System.out.println(10000+A*1000);
         }else if((A==B)){
             System.out.println(1000+A*100);
@@ -36,13 +37,9 @@ public class exam19 {
             System.out.println(1000+C*100);
         }else if((B==C)){
             System.out.println(1000+C*100);
-        }else if((A!=B&&A!=C&&C!=B&&A>B&&A>C)){
-            System.out.println(A*100);
-        }else if((A!=B&&A!=C&&C!=B&&B>A&&B>C)){
-            System.out.println(B*100);
-        }else if((A!=B&&A!=C&&C!=B&&C>B&&C>A)){
-            System.out.println(C*100);
-        }    
+        }else if(A!=B&&A!=C){
+            System.out.println(MAX*100);
+        }
         
     }
 }
