@@ -15,7 +15,7 @@ public class exam32 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String input;
         while (( input = br.readLine()) != null) {            
-            String ar[] = input.split(" ");
+            String ar[] = input.trim().split(" ");
             int A = Integer.parseInt(ar[0]);
             int B = Integer.parseInt(ar[1]);            
             
