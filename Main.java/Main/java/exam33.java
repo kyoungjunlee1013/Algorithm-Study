@@ -28,10 +28,10 @@ public class exam33 {
                 C++;
             }
         }
-        System.out.println(C);
+             System.out.println(C);
             
         }
-                        
+        
         
     }
 
