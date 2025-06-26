@@ -27,7 +27,7 @@ public class exam34 {
             int C = Integer.parseInt(ar2[i]);
             if(B>C){
                 sb.append(C);                
-                System.out.print((C+" ").trim());
+                System.out.print(C+" ");
             }
         }
 
