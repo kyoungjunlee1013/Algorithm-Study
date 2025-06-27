@@ -11,28 +11,19 @@ public class exam35 {
     // 출력
     // 첫째 줄에 주어진 정수 N개의 최솟값과 최댓값을 공백으로 구분해 출력한다.
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());  // 정수의 개수
 
-        long A = Integer.parseInt(br.readLine());
-        
-        String[] ar = br.readLine().split(" ");
-        
-        long MAX = 0;
-        long MIN = 0;
+        String[] tokens = br.readLine().split(" ");
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
 
-        for(int i=0; i<A; i++){            
-            long B = Long.parseLong(ar[i]);
-            long C = Long.parseLong(ar[i]);
-            
-           B = Long.max(MAX, B);
-           C = Long.min(C, C);
-
-           MAX = B;
-           MIN = C;
-            
+        for (int i = 0; i < N; i++) {
+            int num = Integer.parseInt(tokens[i]);
+            if (num < min) min = num;
+            if (num > max) max = num;
         }
-        System.out.println(MAX);
-        System.out.println(MIN);
-        
+
+        System.out.println(min + " " + max);
     }
 }
