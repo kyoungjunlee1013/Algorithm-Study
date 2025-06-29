@@ -41,6 +41,6 @@ public class exam38 {
         ar3[K-1] = T;
     }
         for(int i=0; i<A; i++)
-        System.out.print(ar3[i]);
+        System.out.print(ar3[i]+" ");
     }
 }
