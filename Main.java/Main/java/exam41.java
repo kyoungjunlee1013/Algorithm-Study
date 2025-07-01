@@ -2,48 +2,36 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public abstract class exam41 {
-    public static void main(String[] args)throws IOException{
-//         문제
-// 도현이는 바구니를 총 N개 가지고 있고, 각각의 바구니에는 1번부터 N번까지 번호가 순서대로 적혀져 있다. 바구니는 일렬로 놓여져 있고, 가장 왼쪽 바구니를 1번째 바구니, 그 다음 바구니를 2번째 바구니, ..., 가장 오른쪽 바구니를 N번째 바구니라고 부른다. 
-// 도현이는 앞으로 M번 바구니의 순서를 역순으로 만들려고 한다. 도현이는 한 번 순서를 역순으로 바꿀 때, 순서를 역순으로 만들 범위를 정하고, 그 범위에 들어있는 바구니의 순서를 역순으로 만든다.
-// 바구니의 순서를 어떻게 바꿀지 주어졌을 때, M번 바구니의 순서를 역순으로 만든 다음, 바구니에 적혀있는 번호를 가장 왼쪽 바구니부터 출력하는 프로그램을 작성하시오.
-// 입력
-// 첫째 줄에 N (1 ≤ N ≤ 100)과 M (1 ≤ M ≤ 100)이 주어진다.
-// 둘째 줄부터 M개의 줄에는 바구니의 순서를 역순으로 만드는 방법이 주어진다. 방법은 i j로 나타내고, 왼쪽으로부터 i번째 바구니부터 j번째 바구니의 순서를 역순으로 만든다는 뜻이다. (1 ≤ i ≤ j ≤ N)
-// 도현이는 입력으로 주어진 순서대로 바구니의 순서를 바꾼다.
-// 출력
-// 모든 순서를 바꾼 다음에, 가장 왼쪽에 있는 바구니부터 바구니에 적혀있는 순서를 공백으로 구분해 출력한다.
-
+public class exam41 {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
+        
         String[] ar1 = br.readLine().split(" ");
-        int A = Integer.parseInt(ar1[0]);
-        int B = Integer.parseInt(ar1[1]);
-        int H = 0;
-        int[] C = new int[A];      
-        for(int D=0; D<A; D++){
-            C[D] = (D+1);            
+        int N = Integer.parseInt(ar1[0]);
+        int M = Integer.parseInt(ar1[1]);
+
+        int[] baskets = new int[N];
+        for (int i = 0; i < N; i++) {
+            baskets[i] = i + 1;
         }
 
-        for(int E=0; E<B; E++){
+        for (int m = 0; m < M; m++) {
             String[] ar2 = br.readLine().split(" ");
-            int F = Integer.parseInt(ar2[0])+1;
-            int G = Integer.parseInt(ar2[1])+1;                   
+            int i = Integer.parseInt(ar2[0]) - 1;  // 0-based index
+            int j = Integer.parseInt(ar2[1]) - 1;
 
-            for(int i=0; F/G == 1; i++,F++,G--){            
-                H = F;
-                C[F] = G;
-                C[G] = H;                       
-                System.out.println("gdgsl");      
+            while (i < j) {
+                int temp = baskets[i];
+                baskets[i] = baskets[j];
+                baskets[j] = temp;
+                i++;
+                j--;
             }
         }
-        for(int i=0; i<C.length; i++){
-            System.out.println(C[i]);
+
+        // 공백 구분 한 줄 출력
+        for (int i = 0; i < baskets.length; i++) {
+            System.out.print(baskets[i] + " ");
         }
-
-      
-
-
     }
 }
