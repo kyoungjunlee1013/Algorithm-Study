@@ -15,12 +15,13 @@ public class exam45 {
     int N = Integer.parseInt(br.readLine());
     String [] ar = new String[N];
     for(int i=0; i<N; i++){
-        String STR = br.readLine();
-        System.out.println(STR.charAt(0));
-        System.out.println(STR.lastIndexOf(STR));
+        String STR = br.readLine();     
+        int len = STR.length();
+        
+        System.out.println(STR.charAt(0)+""+STR.charAt(len-1));
     }
-
     
+
    
     }
 }
