@@ -13,8 +13,8 @@ public class exam46 {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        String N = br.readLine();
-        int A = Integer.parseInt(N);
-        System.out.println(A);
+        char N = br.readLine().charAt(0);
+        
+        System.out.println((int)N);
     }
 }
