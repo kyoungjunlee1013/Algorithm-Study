@@ -17,7 +17,7 @@ public class exam47 {
         int A = 0;
         int B = 0;
         for(int i=0; i<N; i++){            
-            A = ((int)M.charAt(i) - 48);
+            A = ((int)M.charAt(i) - 48);    
             B += A;
         }
         System.out.println(B);
